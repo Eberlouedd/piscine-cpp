@@ -6,45 +6,57 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 23:12:23 by kyacini           #+#    #+#             */
-/*   Updated: 2023/09/21 01:38:04 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/09/23 20:27:58 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/PhoneBook.hpp"
+#include "includes/PhoneBook.hpp"
 #include <string>
 #include <iostream>
-#include "../includes/Contact.hpp"
+#include "includes/Contact.hpp"
+#include "includes/functions.h"
+#include <cstring>
+#include <cstdlib>
+#include <cctype>
+
+void print_good_length(std::string var)
+{
+    if(var.length() < 10)
+    {
+        for(size_t c = 0; c < 10 - var.length(); c++)
+            std::cout << " ";
+        std::cout << var;
+    }
+    else
+    {
+        for(size_t j = 0; j < 9; j++)
+            std::cout << var[j];
+        std::cout << ".";
+    }
+}
+
+bool isAllDigit(std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!std::isdigit(str[i])) {
+            return false;
+        }
+    }
+    return true;
+}
 
 int main()
 {
-    PhoneBook p;
-    int i = 0;
+    PhoneBook p(0);
     std::string answer;
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string phone_number;
-    std::string darkest_secret;
 
     while (answer != "EXIT")
     {
-        std::cin >> answer;
+        std::cout << "Phonebook> ";
+        if (!std::getline(std::cin, answer))
+             exit(EXIT_SUCCESS);
         if (answer == "ADD")
-        {
-            std::cout << "Fist name : ";
-            std::cin >> first_name;
-            std::cout << "Last name : ";
-            std::cin >> last_name;
-            std::cout << "Nickname : ";
-            std::cin >> nickname;
-            std::cout << "Phone number : ";
-            std::cin >> phone_number;
-            std::cout << "Darket secret: ";
-            std::cin >> darkest_secret;
-            Contact c(first_name, last_name, nickname, phone_number, darkest_secret);
-            i++;
-            p.add_contact(c, i);
-        }
-        p.get_contact();
+            p.add_contact();
+        else if(answer == "SEARCH")
+            p.search_contact();
     } 
 }

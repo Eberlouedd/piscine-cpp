@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 23:25:44 by kyacini           #+#    #+#             */
-/*   Updated: 2023/09/21 01:40:40 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/09/23 19:19:54 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ public:
     std::string l, std::string n,
     std::string p,
     std::string d);
-    std::string get_one();
+    std::string get_firstName();
+    std::string get_lastName();
+    std::string get_nickName();
+    std::string get_phoneNumber();
+    std::string get_darkestSecret();
     ~Contact(){};
 };
 

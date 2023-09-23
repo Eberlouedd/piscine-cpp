@@ -6,37 +6,44 @@
 #    By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 00:45:07 by kyacini           #+#    #+#              #
-#    Updated: 2023/09/21 01:24:15 by kyacini          ###   ########.fr        #
+#    Updated: 2023/09/23 20:27:17 by kyacini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 	class/main.cpp \
-		class/Contact.cpp \
-		class/PhoneBook.cpp \
+HEADERS			=	./includes/Phonebook.hpp	\
+					./includes/Contact.hpp
 
-NAME = phone_book
+SRCS			=	./main.cpp				\
+					./class/PhoneBook.cpp	\
+					./class/Contact.cpp
 
-CC = c++
+OBJS			=	${SRCS:.cpp=.o}
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+DEPS			=	${SRCS:.cpp=.d}
 
-OBJS = objs/main.o \
-		objs/Contact.o \
-		objs/PhoneBook.o \
+NAME			=	phonebook
 
-all	:	${NAME}
+CC				=	c++
+RM				=	rm -rf
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98  
 
-${NAME}	:	${OBJS}
-	${CC} ${OBJS} -o ${NAME}
+### Commandes
 
-${OBJS} : ${SRC}
-	@mkdir -p objs
-	${CC} -o $@ -c $< ${CFLAGS}
+all:			${NAME}
 
-clean	:
-	rm -rf objs
+${NAME}:		${OBJS}
+				${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
-fclean	:	clean
-	rm -rf ${NAME}
-	
+.cpp.o:
+				${CC} -c ${CFLAGS} $^ -o $@
+
+clean:
+				${RM} ${OBJS} 
+
+fclean:			clean
+				${RM} ${NAME}
+
+re:				fclean all
+
+-include : ${DEPS}
 re:	fclean all

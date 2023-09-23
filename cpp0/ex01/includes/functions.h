@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 23:25:47 by kyacini           #+#    #+#             */
-/*   Updated: 2023/09/23 19:25:52 by kyacini          ###   ########.fr       */
+/*   Created: 2023/09/23 18:57:40 by kyacini           #+#    #+#             */
+/*   Updated: 2023/09/23 19:50:04 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-#include "Contact.hpp"
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+#include <string>
 
-class PhoneBook
-{
-private:
-    Contact contact_list[8];
-    int contact_num;
-public:
-    PhoneBook(){};
-    PhoneBook(int i);
-    ~PhoneBook(){};
-    void add_contact();
-    void search_contact();
-};
-
-
-
+void print_good_length(std::string var);
+bool isAllDigit(std::string& str);
 
 #endif
