@@ -5,33 +5,45 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/16 11:43:22 by kyacini           #+#    #+#              #
-#    Updated: 2023/09/16 11:57:30 by kyacini          ###   ########.fr        #
+#    Created: 2023/09/21 00:45:07 by kyacini           #+#    #+#              #
+#    Updated: 2023/09/29 19:51:37 by kyacini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp \
+HEADERS			=	./includes/Zombie.hpp \
+					./includes/zombie.h
 
-NAME = libft.a
+SRCS			=	./class/Zombie.cpp	\
+					./main.cpp	\
+					./zombieHorde.cpp	\
 
-OBJS = ${SRC:.c=.o}
+OBJS			=	${SRCS:.cpp=.o}
 
-OBJS_BONUS = ${BONUS:.c=.o}
+DEPS			=	${SRCS:.cpp=.d}
 
-all	:	${NAME}
+NAME			=	zombie
 
-%.o : %.c
-	c++ -o $@ -c $< -Wall -Werror -Wextra
+CC				=	c++
+RM				=	rm -rf
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98  
 
-libft.a	:	${OBJS}
-	ar rc ${NAME} ${OBJS}
+### Commandes
 
-bonus	:	${OBJS} ${OBJS_BONUS}
-	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
-clean	:
-	rm -rf *.o
+all:			${NAME}
 
-fclean	:	clean
-	rm -rf ${NAME}
-	
+${NAME}:		${OBJS}
+				${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+
+.cpp.o:
+				${CC} -c ${CFLAGS} $^ -o $@
+
+clean:
+				${RM} ${OBJS} 
+
+fclean:			clean
+				${RM} ${NAME}
+
+re:				fclean all
+
+-include : ${DEPS}
 re:	fclean all
