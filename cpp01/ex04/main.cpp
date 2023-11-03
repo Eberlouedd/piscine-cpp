@@ -6,25 +6,42 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:17:26 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/08 01:48:22 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/03 14:57:03 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <cstring>
 
+std::string ft_replace(std::string str, std::string s1, std::string s2)
+{
+    std::string before;
+    std::string after;
+    std::string result;
+    int i = 0;
+    while(str.find(s1, i) != std::string::npos)
+    {
+        before = str.substr(0, str.find(s1, i));
+        after =  str.substr(str.find(s1, i) + s1.length());
+        i = str.find(s1, i) + s1.length() + 1;
+        str = before + s2 + after;
+        std::cout << str << std::endl;;
+    }
+    return str;
+}
 
 int main(int argc, char **argv)
 {
     if (argc == 4)
     {
         std::string s1 = argv[2];
+        std::string s2 = argv[3];
         std::string line;
         std::string newfile;
-        std::string beforebuff;
-        std::string afterbuff;
         std::fstream filename(argv[1], std::ios::in);
+        std::fstream file_replace(std::strcat(argv[1], ".replace"), std::ios::out);
+
         if(filename.is_open())
         {
             while(std::getline(filename, line))
@@ -33,20 +50,12 @@ int main(int argc, char **argv)
                 if(!filename.eof())
                     newfile += "\n";
             }
-            line = newfile;
-            while (line.find(s1) != std::string::npos)
-            {
-                beforebuff = line.substr(0, newfile.find(s1));
-                afterbuff = line.substr(newfile.find(s1) + s1.length());
-                newfile = beforebuff + argv[3] + afterbuff;
-                line = newfile;
-            }
+            newfile = ft_replace(newfile, s1, s2);
             filename.close();
-            filename.open(argv[1], std::ios::out | std::ios::trunc);
-            if (filename.is_open()) 
+            if (file_replace.is_open()) 
             {
-                filename << newfile;
-                filename.close();
+                file_replace << newfile;
+                file_replace.close();
             }
             else
                 std::cerr << "Erreur lors de l'ecriture" << std::endl;
@@ -54,4 +63,7 @@ int main(int argc, char **argv)
         else
             std::cerr << "Erreur lors de l'ouverture du fichier" << std::endl;
     }
+    else
+        std::cout << "Wrong args" << std::endl;
+    return 0;
 }
