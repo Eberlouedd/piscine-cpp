@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGWrongAnimal_HPP
-#define WRONGWrongAnimal_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 #include <string>
 #include <iostream>
 
@@ -22,8 +22,8 @@ private:
 public:
     WrongAnimal();
     WrongAnimal(WrongAnimal const &copy);
-    virtual std::string getType() const;
-    virtual void makeSound() const;
+    std::string getType() const;
+    void makeSound() const;
     virtual ~WrongAnimal();
 };
 

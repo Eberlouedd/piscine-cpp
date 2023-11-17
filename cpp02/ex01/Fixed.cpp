@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 21:10:46 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/12 04:03:12 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/05 15:34:30 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Fixed::Fixed() : nb_point_fixed(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& f) : nb_point_fixed(f.nb_point_fixed)
+Fixed::Fixed(const Fixed& f)
 {
     std::cout << "Copy constructor called" << std::endl;
     if(this != &f)

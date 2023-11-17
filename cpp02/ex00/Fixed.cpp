@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 21:10:46 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/08 23:16:12 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/05 15:43:34 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Fixed::Fixed(const Fixed& f) : nb_point_fixed(f.nb_point_fixed)
 
 Fixed& Fixed::operator=(const Fixed& newf)
 {
+    std::cout << "Copy assignment operator called" << std::endl;
     if(this != &newf)
         this->nb_point_fixed = newf.getRawBits();
     return *this;

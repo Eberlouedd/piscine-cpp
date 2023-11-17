@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 17:35:52 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:05 by kyacini          ###   ########.fr       */
+/*   Created: 2023/10/17 20:35:03 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/17 16:04:47 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Zombie.hpp"
-#include "includes/Zombie.h"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+#include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : public ClapTrap
 {
-	Zombie *z = newZombie("Sofia");
-	randomChump("Kenzy");
-	z->announce();
-	delete z;
-	return 0;
-}
+    public:
+        ScavTrap();
+        ScavTrap(std::string n);
+        ScavTrap(ScavTrap const &copy);
+        ScavTrap &operator=(ScavTrap const & c);
+        void attack(const std::string &target);
+        void guardGate();
+        ~ScavTrap();
+};
+
+#endif

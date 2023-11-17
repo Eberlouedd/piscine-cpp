@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 17:35:52 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:05 by kyacini          ###   ########.fr       */
+/*   Created: 2023/11/05 11:11:14 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/05 13:43:50 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Zombie.hpp"
-#include "includes/Zombie.h"
+#ifndef AMATERIAS_HPP
+#define AMATERIAS_HPP
+#include <iostream>
+#include <string>
 
-int main()
+class AMateria
 {
-	Zombie *z = newZombie("Sofia");
-	randomChump("Kenzy");
-	z->announce();
-	delete z;
-	return 0;
-}
+	protected:
+
+	public:
+		AMateria(std::string const & type);
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:01:16 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/17 21:42:36 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/17 16:06:40 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
     this->hp = copy.hp;
     this->energy = copy.energy;
     this->attack_d = copy.attack_d;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
+{
+    this->name = copy.name;
+    this->hp = copy.hp;
+    this->energy = copy.energy;
+    this->attack_d = copy.attack_d;
+    return (*this);
 }
 
 void ClapTrap::attack(const std::string &target)

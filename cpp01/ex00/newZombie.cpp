@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 17:35:52 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:05 by kyacini          ###   ########.fr       */
+/*   Created: 2023/11/04 14:58:41 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/04 14:59:50 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Zombie.hpp"
-#include "includes/Zombie.h"
+#include <iostream>
 
-int main()
+Zombie* newZombie(std::string name)
 {
-	Zombie *z = newZombie("Sofia");
-	randomChump("Kenzy");
-	z->announce();
-	delete z;
-	return 0;
+	Zombie *z = new Zombie(name);
+	return z;
 }

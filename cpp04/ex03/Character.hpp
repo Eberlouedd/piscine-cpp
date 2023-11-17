@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 17:35:52 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:05 by kyacini          ###   ########.fr       */
+/*   Created: 2023/11/05 13:42:07 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/05 13:43:45 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Zombie.hpp"
-#include "includes/Zombie.h"
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-int main()
+class ICharacter
 {
-	Zombie *z = newZombie("Sofia");
-	randomChump("Kenzy");
-	z->announce();
-	delete z;
-	return 0;
-}
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
+
+#endif

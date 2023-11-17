@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 21:10:46 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/17 18:53:13 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/05 15:39:20 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 
 Fixed::Fixed() : nb_point_fixed(0)
 {
+    std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& f) : nb_point_fixed(f.nb_point_fixed)
+Fixed::Fixed(const Fixed& f)
 {
+    std::cout << "Copy constructor called" << std::endl;
     if(this != &f)
         this->nb_point_fixed = f.getRawBits();
 }
 
 Fixed::Fixed(float const param) : nb_point_fixed((int)roundf(param * (1 << nb_bits)))
 {
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(int const param) : nb_point_fixed(param << nb_bits)
 {
+    std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& newf)
 {
+    std::cout << "Copy assignment operator called" << std::endl;
     if(this != &newf)
         this->nb_point_fixed = newf.getRawBits();
     return *this;
@@ -182,4 +187,5 @@ Fixed const &Fixed::min(Fixed const &f1, Fixed const &f2)
 
 Fixed::~Fixed()
 {
+    std::cout << "Destructor called" << std::endl;
 }

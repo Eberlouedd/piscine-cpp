@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 17:35:52 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:05 by kyacini          ###   ########.fr       */
+/*   Created: 2023/11/05 13:44:54 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/05 13:45:49 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Zombie.hpp"
-#include "includes/Zombie.h"
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-int main()
+class IMateriaSource
 {
-	Zombie *z = newZombie("Sofia");
-	randomChump("Kenzy");
-	z->announce();
-	delete z;
-	return 0;
-}
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
+#endif

@@ -6,7 +6,7 @@
 #    By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 00:45:07 by kyacini           #+#    #+#              #
-#    Updated: 2023/09/29 19:51:37 by kyacini          ###   ########.fr        #
+#    Updated: 2023/11/04 15:07:48 by kyacini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ HEADERS			=	./includes/Zombie.hpp \
 SRCS			=	./class/Zombie.cpp	\
 					./main.cpp	\
 					./zombieHorde.cpp	\
+					./randomChump.cpp	\
+					./newZombie.cpp	\
 
 OBJS			=	${SRCS:.cpp=.o}
 

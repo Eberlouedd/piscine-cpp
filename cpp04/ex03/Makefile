@@ -6,13 +6,11 @@
 #    By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 23:35:36 by kyacini           #+#    #+#              #
-#    Updated: 2023/11/17 14:56:15 by kyacini          ###   ########.fr        #
+#    Updated: 2023/11/05 11:11:53 by kyacini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 			=	./ClapTrap.cpp \
-					./ScavTrap.cpp \
-					./FragTrap.cpp \
+SRCS 			=	./AMateria.cpp \
 					./main.cpp \
 
 OBJS			=	${SRCS:.cpp=.o}

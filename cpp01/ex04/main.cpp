@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:17:26 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/03 14:57:03 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/05 13:10:52 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ std::string ft_replace(std::string str, std::string s1, std::string s2)
     {
         before = str.substr(0, str.find(s1, i));
         after =  str.substr(str.find(s1, i) + s1.length());
-        i = str.find(s1, i) + s1.length() + 1;
+        i = str.find(s1, i) + s2.length();
         str = before + s2 + after;
-        std::cout << str << std::endl;;
     }
     return str;
 }
