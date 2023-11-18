@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 01:47:58 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/25 22:40:42 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/18 01:19:24 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     Animal();
     Animal(Animal const &copy);
     Animal &operator=(const Animal& animal);
-    virtual std::string getType() const;
+    std::string getType() const;
     virtual void makeSound() const;
     virtual ~Animal();
 };

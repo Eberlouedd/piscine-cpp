@@ -6,11 +6,15 @@
 #    By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 23:35:36 by kyacini           #+#    #+#              #
-#    Updated: 2023/11/05 11:11:53 by kyacini          ###   ########.fr        #
+#    Updated: 2023/11/18 00:42:08 by kyacini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS 			=	./AMateria.cpp \
+					./Cure.cpp \
+					./Ice.cpp \
+					./Character.cpp \
+					./MateriaSource.cpp \
 					./main.cpp \
 
 OBJS			=	${SRCS:.cpp=.o}

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGWrongCat_HPP
-#define WRONGWrongCat_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal

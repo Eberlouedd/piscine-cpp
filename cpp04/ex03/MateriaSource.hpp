@@ -5,19 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 13:44:54 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/05 13:45:49 by kyacini          ###   ########.fr       */
+/*   Created: 2023/11/18 00:33:29 by kyacini           #+#    #+#             */
+/*   Updated: 2023/11/18 00:42:11 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
-
-class IMateriaSource
+# define MATERIASOURCE_HPP
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+class MateriaSource: public IMateriaSource
 {
 	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		MateriaSource();
+		MateriaSource(MateriaSource const& toCopy);
+		MateriaSource& operator=(MateriaSource const& toAffect);
+		virtual	~MateriaSource();
+		virtual void	learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const& type);
+		virtual void	show_inventory() const;
+	private:
+
+		int	size;
+		AMateria *inventory[4];
 };
+
 #endif

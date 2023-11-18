@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "humana.hpp": "c",
+        "humanb.hpp": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
