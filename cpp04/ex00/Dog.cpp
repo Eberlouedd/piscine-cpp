@@ -6,13 +6,18 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 01:50:41 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/18 02:56:18 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 19:06:40 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : type("Dog")
+Dog::Dog() : Animal("Dog")
+{
+    std::cout << "Default dog constructor called" << std::endl;
+}
+
+Dog::Dog(std::string t) : Animal(t)
 {
     std::cout << "Default dog constructor called" << std::endl;
 }

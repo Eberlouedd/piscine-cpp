@@ -16,14 +16,13 @@
 
 class WrongCat : public WrongAnimal
 {
-private:
-    std::string type;
-public:
-    WrongCat();
-    WrongCat(WrongCat const &copy);
-    std::string getType() const;
-    void makeSound() const;
-    ~WrongCat();
+    public:
+        WrongCat();
+        WrongCat(std::string t);
+        WrongCat(WrongCat const &copy);
+        std::string getType() const;
+        void makeSound() const;
+        ~WrongCat();
 };
 
 

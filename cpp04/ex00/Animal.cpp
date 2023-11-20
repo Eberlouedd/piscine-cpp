@@ -6,13 +6,17 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 01:48:34 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/18 02:56:23 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:53:47 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() : type("Default")
+{
+}
+
+Animal::Animal(std::string t) : type(t)
 {
 }
 

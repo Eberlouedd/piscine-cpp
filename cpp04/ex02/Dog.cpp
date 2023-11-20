@@ -6,22 +6,29 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 01:50:41 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/25 22:42:46 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 19:16:10 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : type("Dog")
+Dog::Dog() : Animal("Dog")
 {
     std::cout << "Default dog constructor called" << std::endl;
+    this->b = new Brain();
+}
+
+Dog::Dog(std::string t) : Animal(t)
+{
+    std::cout << "Dog constructor called" << std::endl;
     this->b = new Brain();
 }
 
 Dog::Dog(Dog const &copy) : Animal(copy)
 {
     std::cout << "Copy dog constructor called" << std::endl;
-    this->b = copy.b;
+    this->type = copy.type;
+    this->b = new Brain(*copy.b);
 }
 
 void Dog::makeSound() const

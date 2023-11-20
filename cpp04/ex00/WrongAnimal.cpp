@@ -16,6 +16,10 @@ WrongAnimal::WrongAnimal() : type("Default")
 {
 }
 
+WrongAnimal::WrongAnimal(std::string t) : type(t)
+{
+}
+
 WrongAnimal::WrongAnimal(WrongAnimal const &copy) : type(copy.type)
 {
 }

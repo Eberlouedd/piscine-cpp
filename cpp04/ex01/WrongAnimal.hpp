@@ -17,15 +17,16 @@
 
 class WrongAnimal
 {
-private:
-    std::string type;
-public:
-    WrongAnimal();
-    WrongAnimal(WrongAnimal const &copy);
-    WrongAnimal &operator=(const WrongAnimal& cat);
-    virtual std::string getType() const;
-    virtual void makeSound() const;
-    virtual ~WrongAnimal();
+    protected:
+        std::string type;
+    public:
+        WrongAnimal();
+        WrongAnimal(std::string t);
+        WrongAnimal(WrongAnimal const &copy);
+        WrongAnimal &operator=(const WrongAnimal& cat);
+        std::string getType() const;
+        void makeSound() const;
+        virtual ~WrongAnimal();
 };
 
 

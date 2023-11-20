@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:33:29 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/18 00:42:11 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:29:54 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class MateriaSource: public IMateriaSource
 		virtual AMateria* createMateria(std::string const& type);
 		virtual void	show_inventory() const;
 	private:
-
 		int	size;
 		AMateria *inventory[4];
 };

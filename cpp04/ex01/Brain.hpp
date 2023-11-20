@@ -6,7 +6,7 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:23:03 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/18 01:38:52 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 19:10:42 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
     Brain();
     Brain(Brain const &copy);
     Brain &operator=(Brain const &brain);
+    void setIdea(std::string idea, int index);
+    std::string getIdea(int i) const;
     ~Brain();
 };
 

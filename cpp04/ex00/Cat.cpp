@@ -6,13 +6,18 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 02:05:17 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/18 02:53:26 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:47:17 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : type("Cat")
+Cat::Cat() : Animal("Cat")
+{
+    std::cout << "Default Cat constructor called" << std::endl;
+}
+
+Cat::Cat(std::string t) : Animal(t)
 {
     std::cout << "Default Cat constructor called" << std::endl;
 }

@@ -6,13 +6,13 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:20:50 by kyacini           #+#    #+#             */
-/*   Updated: 2023/11/18 00:43:26 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/18 14:53:24 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void)
+MateriaSource::MateriaSource()
 {
 	std::cout << "MateriaSource Default Constructor called" << std::endl;
 	size = 0;
@@ -20,12 +20,12 @@ MateriaSource::MateriaSource(void)
 		inventory[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource const& toCopy)
+MateriaSource::MateriaSource(MateriaSource const& copy)
 {
 	std::cout << "MateriaSource Copy Constructor called" << std::endl;
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = NULL;
-	*this = toCopy;
+	*this = copy;
 }
 
 MateriaSource&	MateriaSource::operator=(MateriaSource const& toAffect)
@@ -48,7 +48,7 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const& toAffect)
 	return (*this);
 }
 
-MateriaSource::~MateriaSource(void)
+MateriaSource::~MateriaSource()
 {
 	std::cout << "MateriaSource Destructor called" << std::endl;
 	for (int i = 0; i < 4; ++i)

@@ -6,13 +6,17 @@
 /*   By: kyacini <kyacini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 01:48:34 by kyacini           #+#    #+#             */
-/*   Updated: 2023/10/25 23:50:40 by kyacini          ###   ########.fr       */
+/*   Updated: 2023/11/19 19:07:51 by kyacini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() : type("Default")
+{
+}
+
+Animal::Animal(std::string t) : type(t)
 {
 }
 
@@ -29,6 +33,11 @@ Animal &Animal::operator=(const Animal& animal)
 {
     this->type = animal.type;
     return (*this);
+}
+
+void Animal::makeSound() const
+{
+    std::cout << "Default sound" << std::endl;
 }
 
 Animal::~Animal()
